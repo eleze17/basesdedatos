@@ -5,22 +5,34 @@ class ClienteSql {
     this.knex = knexLib(config)
   }
 
-  crearTabla() {
-    return this.knex.schema.dropTableIfExists('mensajes')
+  crearTabla(tabla) {
+    return this.knex.schema.dropTableIfExists(tabla)
       .finally(() => {
-        return this.knex.schema.createTable('mensajes', table => {
+        if (tabla == 'mensajes'){
+        return this.knex.schema.createTable(tabla, table => {
           table.increments('id').primary();
-          table.string('detalle', 2000);
+          table.string('hora', 50);
+          table.string('mail', 100);
+          table.string('msg', 2000);
         })
+      } else  if (tabla == 'productos'){
+        return this.knex.schema.createTable(tabla, table => {
+          table.increments('id').primary();
+          table.string('nombre', 100);
+          table.float('precio',12);
+          table.string('url', 100);
+        })        
+      }
+
       })
   }
 
-  insertarMensajes(mensaje) {
-    return this.knex('mensajes').insert(mensaje)
+  insert(tabla,registro) {
+    return this.knex(tabla).insert(registro)
   }
 
-  listarMensajes() {
-    return this.knex('mensajes').select('*')
+  listar(tabla) {
+    return this.knex(tabla).select('*')
   }
 
   borrarMensajePorId(id) {

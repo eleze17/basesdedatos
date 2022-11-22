@@ -1,63 +1,43 @@
 const socket = io();
 
-
-// update-productos
-const formProducto = document.getElementById('form-producto')
-formProducto.addEventListener('submit', e => {
-    e.preventDefault()
-
-    const producto = {
-        nombre: document.getElementById('producto-nombre').value,
-        precio: document.getElementById('producto-precio').value,
-        url: document.getElementById('producto-url').value
-    }
-
-    socket.emit('update-productos', producto);
-    formProducto.reset()
-})
-
-// render-productos
-socket.on('productos', manejarEventoProductos);
-async function manejarEventoProductos(productos) {
-
-    const recursoRemoto = await fetch('hbs/productos.hbs')
-    const textoPlantilla = await recursoRemoto.text()
-    const functionTemplate = Handlebars.compile(textoPlantilla)
-
-    const html = functionTemplate({ productos })
-    document.getElementById('productos').innerHTML = html
-}
-
-
-
 // update-chat
-const formChat = document.getElementById('form-chat')
+const formChat = document.getElementById('form-post')
 formChat.addEventListener('submit', e => {
     e.preventDefault()
 
-    const hora = new Date()
 
-    const chat = {
-        mail: document.getElementById('chat-mail').value,
-        msg: document.getElementById('chat-msg').value,
-        hora: '[' + hora.toLocaleString() + ']'
-    }
+    const post = {
+        mail: document.getElementById('post-mail').value,
+        nombre: document.getElementById('post-nombre').value,
+        apellido: document.getElementById('post-apellido').value,
+        edad: document.getElementById('post-edad').value,
+        alias: document.getElementById('post-alias').value,
+        avatar: document.getElementById('post-avatar').value,
+        text: document.getElementById('post-text').value
+            }
     
-    socket.emit('update-chat', chat);
-    document.getElementById('chat-msg').value = ''
+    socket.emit('update-post', post);
+     document.getElementById('post-mail').value = ''
+     document.getElementById('post-nombre').value= ''
+     document.getElementById('post-apellido').value= ''
+     document.getElementById('post-edad').value= ''
+     document.getElementById('post-alias').value= ''
+     document.getElementById('post-avatar').value= ''
+     document.getElementById('post-text').value= ''
+       
 })
 
 // render-chat
-socket.on('chat', manejarEventoChat);
-async function manejarEventoChat(chat) {
-    console.log(chat)
+socket.on('post', manejarEventoPost);
+async function manejarEventoPost(post) {
+    console.log(post)
 
-    const recursoRemoto = await fetch('hbs/chat.hbs')
+    const recursoRemoto = await fetch('../hbs/post.hbs')
     const textoPlantilla = await recursoRemoto.text()
     const functionTemplate = Handlebars.compile(textoPlantilla)
 
-    const html = functionTemplate({ chat })
-    document.getElementById('chat').innerHTML = html
+    const html = functionTemplate({ post })
+    document.getElementById('post').innerHTML = html
 }
 
 

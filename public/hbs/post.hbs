@@ -13,12 +13,12 @@
         font-style: italic;
     }
 </style>
-{{#if chat.length}}
-{{#each chat}}
+{{#if post.length}}
+{{#each post}}
 <p>
-    <span class="chat-text-mail"> {{this.mail}} </span>
-    <span class="chat-text-hora"> {{this.hora}} </span> :
-    <span class="chat-text-msg"> {{this.msg}} </span>
+    <span class="post-mail"> {{this.mail}} </span>
+    <span class="post-alias"> {{this.aias}} </span>
+    <span class="post-text"> {{this.text}} </span>
 </p>
 {{/each}}
 <hr>

@@ -15,59 +15,33 @@
 </head>
 
 <body>
-
-    <div class="container mt-3">
+<div class="container mt-3">
         <div class="jumbotron">
-            <h1>Ingrese Producto</h1>
-            <br>
-
-            <form id="form-producto">
-                <div class="form-group">
-                    <label for="nombre"><b>Nombre</b></label>
-                    <input id="producto-nombre" class="form-control" type="text" name="nombre">
-                </div>
-
-                <div class="form-group">
-                    <label for="precio"><b>Precio</b></label>
-                    <input id="producto-precio" class="form-control" type="number" name="precio">
-                </div>
-
-                <div class="form-group">
-                    <label for="url"><b>Foto URL*</b></label>
-                    <input id="producto-url" class="form-control" type="url" name="url">
-                </div>
-
-               
-
-                <button class="btn btn-success mt-3">Enviar</button>
-            </form>
-            <br>
-            <div id="productos"></div>
-        </div>
-    </div>
-
-
-
-
-    <div class="container mt-3">
-        <div class="jumbotron">
-            <h1>Centro de Mensajes</h1>
+            <h1>Centro de Posteos</h1>
             <br>
 
             
-            <form id="form-chat">
+            <form id="form-post">
 
-                Correo: <input id="chat-mail" class="form-chat-input" type="email" name="mail" required>
-                
+                Correo: <input id="post-mail" class="form-post-input" type="email" name="mail" required>
                 <hr>
-                <div id="chat">
-                </div>
+                Nombre:<input id="post-nombre" class="form-post-input" type="text" name="text" required>
+                <hr>
+                Apellido:<input id="post-apellido" class="form-post-input" type="text" name="text" required>
+                <hr>
+                Edad:<input id="post-edad" class="form-post-input" type="number" name="number" required>
+                <hr>
+                Alias:<input id="post-alias" class="form-post-input" type="text" name="text" required>
+                <hr>
+                Avatar:<input id="post-avatar" class="form-post-input" type="text" name="text" required>
+                <hr>
+                Post:<input id="post-text" class="form-post-input" type="text" name="text" required>
 
-                <input id="chat-msg" class="form-chat-input" type="text" name="msg" required>
-
-                <button class="btn btn-primary"> Enviar </button>
+            <button class="btn btn-primary"> Enviar </button>
             </form>
-
+            <div id="post">
+            </div>
+        
 
         </div>
     </div>

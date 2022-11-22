@@ -1,4 +1,4 @@
-const fs = require('fs')
+import fs  from 'fs'
 
 
 class Contenedor {
@@ -82,6 +82,5 @@ class Contenedor {
         // Devolvemos nada
     }
 }
-
-module.exports = Contenedor
+export {Contenedor}
 

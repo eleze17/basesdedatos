@@ -1,0 +1,32 @@
+[
+  {
+    "mail": "ezeenriquez17@gmail.com",
+    "nombre": "ezequiel",
+    "apellido": "enriquez",
+    "edad": "33",
+    "alias": "eze123",
+    "avatar": "pikachu",
+    "text": "Eduardo veni a buscar a juan cruz",
+    "id": 1
+  },
+  {
+    "mail": "juancarlos@ggmail.com",
+    "nombre": "juan carlos",
+    "apellido": "martinez",
+    "edad": "60",
+    "alias": "juanca",
+    "avatar": "charmander",
+    "text": "voy a ir yo a buscarlo",
+    "id": 2
+  },
+  {
+    "mail": "ezeenriquez17@gmail.com",
+    "nombre": "ezequiel",
+    "apellido": "enriquez",
+    "edad": "33",
+    "alias": "eleze",
+    "avatar": "picachu",
+    "text": "ah ok esta bien",
+    "id": 3
+  }
+]
